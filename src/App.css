@@ -55,7 +55,7 @@ input[type="submit"] {
 }
 
 input[type="text"] {
-  max-width:max-content;
+  max-width: max-content;
   background-color: transparent;
   border-radius: 0;
   border: 1px solid #72a24d;
@@ -67,7 +67,7 @@ input[type="text"]:focus {
   background-color: transparent;
   box-shadow: 0 0 0.1px 0.1rem #72a24d;
   color: #fff;
-  
+
 
 }
 
@@ -114,5 +114,19 @@ li {
   justify-content: space-between;
   margin: auto;
   font-size: 16px;
-  
+
+}
+
+button.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+button.navbar-toggler:hover,
+button.navbar-toggler:focus {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+
 }

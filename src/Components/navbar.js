@@ -8,15 +8,16 @@ import PropTypes from "prop-types";
 function NavBar(props) {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className="navbar">
+      <Navbar collapseOnSelect expand="lg"variant="dark" className="navbar">
         <Container>
           <Navbar.Brand className="n_brand">
             <Link to="/" className="link">
               {props.title}{" "}
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Link to="/" className="link">
                 {props.Link1}

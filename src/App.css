@@ -54,17 +54,19 @@ input[type="submit"] {
 }
 
 input[type="text"] {
-  max-width: 10%;
+  max-width:max-content;
   background-color: transparent;
   border-radius: 0;
   border: 1px solid #72a24d;
   color: #fff;
+  margin: 10px 0;
 }
 
 input[type="text"]:focus {
   background-color: transparent;
   box-shadow: 0 0 0.1px 0.1rem #72a24d;
   color: #fff;
+  
 
 }
 

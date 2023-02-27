@@ -23,9 +23,10 @@ button {
 .App button {
   background-color: transparent;
   border: 1px solid #72a24d;
-  padding: 12px;
+  padding: 10px;
   border-radius: 2px;
-  font-size: 18px;
+  font-size: 16px;
+  max-width: max-content;
 }
 
 a {
@@ -94,6 +95,7 @@ button {
   border: 1px solid #fff;
   color: #fff;
   background-color: #72a24d;
+  max-width: max-content;
 }
 
 .navbar {
@@ -111,5 +113,6 @@ li {
   list-style: none;
   justify-content: space-between;
   margin: auto;
+  font-size: 16px;
   
 }

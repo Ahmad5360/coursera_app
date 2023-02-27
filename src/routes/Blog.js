@@ -72,18 +72,13 @@ export default function Blog() {
       {data.map((item, index) => {
         return (
           <div className="list">
-            
-              <li key={index} >
-                {item}{" "}
-                <button
-                  style={{ margin: "20px" }}
-                  onClick={() => remove(index)}
-                >
-                  Remove Item
-                </button>
-                <button onClick={() => update(index)}>Update</button>{" "}
-              </li>
-            
+            <li key={index}>
+              {item}{" "}
+              <button style={{ margin: "20px" }} onClick={() => remove(index)}>
+                Remove Item
+              </button>
+              <button onClick={() => update(index)}>Update</button>{" "}
+            </li>
           </div>
         );
       })}

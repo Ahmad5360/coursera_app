@@ -25,6 +25,9 @@ function NavBar(props) {
               <Link to="blog" className="link">
                 {props.Link2}{" "}
               </Link>
+              <Link to="listItems" className="link">
+                {props.Link3}{" "}
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -39,6 +42,7 @@ NavBar.propTypes = {
   title: PropTypes.string.isRequired,
   Link1: PropTypes.string,
   Link2: PropTypes.string,
+  Link3:PropTypes.string,
 };
 
 // Default Prop Value
@@ -46,5 +50,7 @@ NavBar.defaultProps = {
   title: "SET SITE TITLE HERE",
   Link1: "SET LINK1 HERE",
   Link2: "SET LINK2 HERE",
+  Link3: "SET LINK3 HERE",
+
 };
 export default NavBar;

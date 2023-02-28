@@ -4,6 +4,7 @@ import Home from "./routes/Home";
 import Blog from "./routes/Blog";
 import Navbar from "./Components/navbar";
 import "./App.css";
+import ListItems from "./Components/List Items";
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
         {/* <h1>Hi, {name}</h1> */}
 
       <BrowserRouter>
-        <Navbar title={"SITE NAME"} Link1={"HOME"} Link2={"BLOG"} />
+        <Navbar title={"SITE NAME"} Link1={"HOME"} Link2={"BLOG"} Link3={"LIST ITEMS"} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="listItems" element={<ListItems />} />
         </Routes>
       </BrowserRouter>
       

@@ -4,7 +4,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -34,9 +33,10 @@ a {
   padding: 12px;
   border-radius: 2px;
   font-size: 18px;
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
 }
+
 
 .App button:hover {
   border: 1px solid #fff;
@@ -81,6 +81,12 @@ input[type="submit"]:hover {
   color: #fff;
   text-decoration: none;
 }
+
+a.link:hover {
+  color: rgb(0, 255, 47);
+}
+
+
 
 .navbar-brand {
   font-size: 22px;

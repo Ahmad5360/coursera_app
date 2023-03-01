@@ -3,11 +3,17 @@ import React from "react";
 
 import "../App.css";
 
-export default function Blog() {
-  
+export default function Blog(props) {
   return (
     <div className="container">
-      <h1 className="text-center my-4">BLOG</h1>
+      <h1
+        className="text-center my-4"
+        style={{
+          color: props.mode === "dark" ? "#72a24d" : "black"
+        }}
+      >
+        BLOG
+      </h1>
       {/* <button>
         <Link to="/">Home</Link>
       </button> */}

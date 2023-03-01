@@ -8,10 +8,26 @@ import PropTypes from "prop-types";
 function NavBar(props) {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg"variant="dark" className="navbar">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        variant={`${props.mode}`}
+        className="navbar"
+      >
         <Container>
           <Navbar.Brand className="n_brand">
-            <Link to="/" className="link">
+            <Link
+              to="/"
+              className="link"
+              style={{
+                color: props.mode === "dark" ? "white" : "black",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#72a24d")}
+              onMouseLeave={(e) =>
+                (e.target.style.color =
+                  props.mode === "dark" ? "white" : "black")
+              }
+            >
               {props.title}{" "}
             </Link>
           </Navbar.Brand>
@@ -19,18 +35,69 @@ function NavBar(props) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link to="/" className="link">
+              <Link
+                to="/"
+                className="link"
+                style={{
+                  color: props.mode === "dark" ? "white" : "black",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "#72a24d")}
+                onMouseLeave={(e) =>
+                  (e.target.style.color =
+                    props.mode === "dark" ? "white" : "black")
+                }
+              >
                 {props.Link1}
               </Link>
-              <Link to="blog" className="link">
+              <Link
+                to="blog"
+                className="link"
+                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                onMouseEnter={(e) => (e.target.style.color = "#72a24d")}
+                onMouseLeave={(e) =>
+                  (e.target.style.color =
+                    props.mode === "dark" ? "white" : "black")
+                }
+              >
                 {props.Link2}{" "}
               </Link>
-              <Link to="listItems" className="link">
+              <Link
+                to="listItems"
+                className="link"
+                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                onMouseEnter={(e) => (e.target.style.color = "#72a24d")}
+                onMouseLeave={(e) =>
+                  (e.target.style.color =
+                    props.mode === "dark" ? "white" : "black")
+                }
+              >
                 {props.Link3}{" "}
               </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
+        <div
+          className="form-check form-switch ms-auto me-2"
+          style={{ fontSize: "14px" }}
+        >
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+            onClick={props.togglemode}
+            
+          />
+          <label
+            className="form-check-label"
+            htmlFor="flexSwitchCheckDefault"
+            style={{
+              color: props.mode === "dark" ? "white" : "black",
+            }}
+          >
+            {props.mode === "light" ? "DARK MODE" : "LIGHT MODE"}
+          </label>
+        </div>
       </Navbar>
     </>
   );
@@ -42,7 +109,7 @@ NavBar.propTypes = {
   title: PropTypes.string.isRequired,
   Link1: PropTypes.string,
   Link2: PropTypes.string,
-  Link3:PropTypes.string,
+  Link3: PropTypes.string,
 };
 
 // Default Prop Value
@@ -51,6 +118,5 @@ NavBar.defaultProps = {
   Link1: "SET LINK1 HERE",
   Link2: "SET LINK2 HERE",
   Link3: "SET LINK3 HERE",
-
 };
 export default NavBar;

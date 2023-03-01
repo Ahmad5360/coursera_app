@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../App.css";
-export default function List_Items() {
+export default function List_Items(props) {
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
   const [error, setError] = useState(false);
@@ -36,15 +36,25 @@ export default function List_Items() {
   console.log(data);
   return (
     <div>
-      <h1 style={{ margin: "50px" }} className="text-center">
+      <h1
+        style={{
+          margin: "50px",
+          color: props.mode === "dark" ? "#72a24d" : "black",
+        }}
+        className="text-center"
+      >
         List Items
       </h1>
 
       <div style={{ margin: "50px" }}>
         <form onSubmit={submitdata}>
-          <h3>Submit Your Items</h3>
-          <label>Name</label>
-          <br />
+          <h3
+            style={{
+              color: props.mode === "dark" ? "#72a24d" : "black",
+            }}
+          >
+            Submit Your Items
+          </h3>
 
           <div>
             <input
@@ -52,11 +62,23 @@ export default function List_Items() {
               onChange={(e) => setName(e.target.value)}
               value={name}
               className="form-control"
+              placeholder="Enter List Item"
+              style={{
+                color: props.mode === "dark" ? "white" : "black",
+                borderColor: props.mode === "dark" ? "#72a24d" : "black",
+              }}
             />
           </div>
 
           <br />
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            style={{
+              color: props.mode === "dark" ? "white" : "black",
+              borderColor: props.mode === "dark" ? "#72a24d" : "black",
+            }}
+            value="Submit"
+          />
         </form>
       </div>
 
@@ -70,13 +92,39 @@ export default function List_Items() {
 
       {data.map((item, index) => {
         return (
-          <div className="list">
-            <li key={index}>
+          <div
+            className="list"
+            style={{
+              borderColor: props.mode === "dark" ? "#72a24d" : "black",
+            }}
+          >
+            <li
+              key={index}
+              style={{
+                color: props.mode === "dark" ? "white" : "black",
+              }}
+            >
               {item}{" "}
-              <button style={{ margin: "20px" }} onClick={() => remove(index)}>
+              <button
+                style={{
+                  margin: "20px",
+                  color: props.mode === "dark" ? "white" : "black",
+                  borderColor: props.mode === "dark" ? "#72a24d" : "black",
+                }}
+                onClick={() => remove(index)}
+              >
                 Remove Item
               </button>
-              <button onClick={() => update(index)}>Update</button>{" "}
+              <button
+                onClick={() => update(index)}
+                style={{
+                  margin: "20px",
+                  color: props.mode === "dark" ? "white" : "black",
+                  borderColor: props.mode === "dark" ? "#72a24d" : "black",
+                }}
+              >
+                Update
+              </button>{" "}
             </li>
           </div>
         );

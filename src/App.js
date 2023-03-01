@@ -5,22 +5,40 @@ import Blog from "./routes/Blog";
 import Navbar from "./Components/navbar";
 import "./App.css";
 import ListItems from "./Components/List Items";
+import Alert from "./Components/Alert";
 
 
 function App() {
   const [mode, setMode] = useState("dark");
+  const [alert,setAlert]=useState(null);
 
+  const showAlert =(message)=>
+  {
+      setAlert(
+        {
+          message:message
+        }
+      )
+      setTimeout(() => {
+        setAlert(null)
+      }, 1500);
+  }
+
+ 
   const togglemode = () => {
     if (mode === "dark") {
       setMode("light");
 
       document.querySelector(".navbar").style.backgroundColor = "#e6feff"; // document.querySelector(".navbar").style.color = "black";
       document.querySelector(".App").style.backgroundColor = "white";
+      showAlert("Light Mode Enabled")
       
     } else {
       setMode("dark");
       document.querySelector(".navbar").style.backgroundColor = "#253454"; // document.querySelector(".navbar").style.color = "white";
       document.querySelector(".App").style.backgroundColor = "#1b263d";
+      showAlert("Dark Mode Enabled")
+
     }
   };
   return (
@@ -37,6 +55,7 @@ function App() {
           mode={mode}
           togglemode={togglemode}
         />
+        <Alert alert={alert} />
         <Routes>
           <Route
             path="/"

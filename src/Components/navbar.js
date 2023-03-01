@@ -7,14 +7,14 @@ import PropTypes from "prop-types";
 
 function NavBar(props) {
   return (
-    <>
+    <div>
       <Navbar
         collapseOnSelect
-        expand="lg"
+        expand="md"
         variant={`${props.mode}`}
         className="navbar"
       >
-        <Container>
+        <div className="container">
           <Navbar.Brand className="n_brand">
             <Link
               to="/"
@@ -75,7 +75,7 @@ function NavBar(props) {
               </Link>
             </Nav>
           </Navbar.Collapse>
-        </Container>
+        </div>
         <div
           className="form-check form-switch ms-auto me-2"
           style={{ fontSize: "14px" }}
@@ -86,7 +86,6 @@ function NavBar(props) {
             role="switch"
             id="flexSwitchCheckDefault"
             onClick={props.togglemode}
-            
           />
           <label
             className="form-check-label"
@@ -99,7 +98,8 @@ function NavBar(props) {
           </label>
         </div>
       </Navbar>
-    </>
+      
+    </div>
   );
 }
 

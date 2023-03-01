@@ -9,7 +9,7 @@ export default function Alert(props) {
         role="alert"
         style={{ borderRadius: 0 }}
       >
-        <strong style={{ fontSize: "16px",display:"flex",justifyContent:"right"}} className="me-auto p-auto">
+        <strong style={{ fontSize: "16px",display:"flex",justifyContent:"center"}} className="me-auto p-auto">
           {props.alert.message}
         </strong>
       </div>

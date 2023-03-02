@@ -38,7 +38,7 @@ export default function Home(props) {
           color: props.mode === "dark" ? "#72a24d" : "black",
         }}
       >
-        Timer : {time.toLocaleTimeString()}
+        Clock : {time.toLocaleTimeString()}
       </h1>
 
       <h1
